@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CITE Skills and Alignment Matching Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding-bottom: 30px;
+        }
+        .header {
+        background-color: rgb(29, 222, 29);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+        color: white;
+        }
+
+        .header h1 {
+        font-size: 20px;
+        text-align: center;
+        flex: 1;
+        }
+
+        .logo-left {
+        height: 80px;
+        }
+
+        .logo-right {
+        height: 80px;
+        }
+        
+        .sample-input {
+            display: inline-block;
+            background-color: #7ed957;
+            color: black;
+            font-weight: bold;
+            padding: 10px 25px;
+            border-radius: 20px;
+            margin: 15px 0;
+        }
+        table {
+            width: 80%;
+            margin: 0 auto 30px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td {
+            border-bottom: 1px solid #ccc;
+        }
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 1000px;
+            margin-top: 25px;
+        }
+        .button-group a {
+            text-decoration: none;
+            background-color: #7c807c;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .button-group a:hover {
+            background-color: #4aa34a;
+        }
+        .footer {
+            background-color: #5bbd5b;
+            padding: 20px;
+            margin-block: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+    <img src="{{ url_for('static', filename='cite.png') }}" alt="CITE Logo" class="logo-left">
+    <h1>SKILLS AND ALIGNMENT MATCHING TOOL: ACADEMIC PATHWAYS</h1>
+    <img src="{{ url_for('static', filename='univ.png') }}" alt="University Logo" class="logo-right">
+    </div>
+
+    <center>
+        <div class="sample-input">Sample Input</div>
+    </center>
+
+    <p style="text-align:center; font-weight:bold;">CITE Skills & Interests Match — Let’s Find Your Path!</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Dimension</th>
+                <th>Description</th>
+                <th>Data Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Technical Skills</td>
+                <td>Programming, web development, networking, etc.</td>
+                <td>Quantitative (1–5)</td>
+            </tr>
+            <tr>
+                <td>Cognitive Skills</td>
+                <td>Problem-solving, logic, research, documentation</td>
+                <td>Quantitative (1-5)</td>
+            </tr>
+            <tr>
+                <td>Soft Skills</td>
+                <td>Communication, teamwork, adaptability, leadership</td>
+                <td>Quantitative (1–5)</td>
+            </tr>
+            <tr>
+                <td>Tool Familiarity</td>
+                <td>List of tools/technologies used</td>
+                <td>Categorical</td>
+            </tr>
+            <tr>
+                <td>Career Interests</td>
+                <td>Areas of interest and improvement</td>
+                <td>Categorical</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    
+    <div class="button-group">
+        <a href="{{ url_for('student_strengths2') }}" class="button">Previous</a>
+        <a href="{{ url_for('sample1') }}" class="button">Next</a>
+    </div>
+
+    <div class="footer"></div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CITE Skills and Alignment Matching Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #56b847;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 20px;
+        }
+        .sample-input {
+             display: inline-block;
+             background-color: #7ed957;
+             color: black;
+            font-weight: bold;
+            padding: 10px 25px;
+            border-radius: 20px;
+            margin: 15px 0;
+            
+        }
+        table {
+            width: 80%;
+            margin: 0 auto 30px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        td {
+            border-bottom: 1px solid #ccc;
+        }
+          .button-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 25px;
+    }
+
+    button {
+      background-color: #7c807c;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #4aa34a;
+
+    }
+     .footer{
+      background-color: #5bbd5b ;
+      padding: 20px;
+     }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>SKILLS AND ALIGNMENT MATCHING TOOL: ACADEMIC PATHWAYS</h1>
+        <h2 style="margin: 5px 0;">CITE</h2>
+    </div>
+<center>
+    <div class="sample-input">Sample Input</div>
+</center>
+    <p style="text-align:center; font-weight:bold;">CITE Skills & Interests Match — Let’s Find Your Path!</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Dimension</th>
+                <th>Description</th>
+                <th>Data Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Technical Skills</td>
+                <td>Programming, web development, networking, etc.</td>
+                <td>Quantitative (1–5)</td>
+            </tr>
+            <tr>
+                <td>Cognitive Skills</td>
+                <td>Problem-solving, logic, research, documentation</td>
+                <td>Quantitative (1-5)</td>
+               
+            </tr>
+            <tr>
+                <td>Soft Skills</td>
+                <td>Communication, teamwork, adaptability, leadership</td>
+                <td>Quantitative (1–5)</td>
+            </tr>
+            <tr>
+                <td>Tool Familiarity</td>
+                <td>List of tools/technologies used</td>
+                <td>Categorical</td>
+            </tr>
+            <tr>
+                <td>Career Interests</td>
+                <td>Areas of interest and improvement</td>
+                <td>Categorical</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+       <div class="button-group">
+        <button type="student_strengths2">Previous</button>
+        <button type="sample1">Next</button>
+    </div>
+    <br>
+
+    <div class="footer">
+        
+    </div>
+</div>
+
+</body>
+</html> -->

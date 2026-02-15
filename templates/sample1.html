@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills and Alignment Matching Tool</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f5f5;
+    text-align: center;
+  }
+  .header {
+    background-color: rgb(29, 222, 29);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      color: white;
+    }
+
+    .header h1 {
+      font-size: 20px;
+      text-align: center;
+      flex: 1;
+    }
+
+    .logo-left {
+      height: 80px;
+    }
+
+    .logo-right {
+      height: 80px;
+    }
+ 
+  .button {
+    display: inline-block;
+    background-color: #7ed957;
+    color: black;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 20px;
+    margin: 15px 0;
+  }
+  table {
+    width: 60%;
+    margin: 0 auto;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  .formula {
+    margin-top: 20px;
+    font-style: italic;
+  }
+ .button-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 25px;
+    }
+
+    button {
+      background-color: #7c807c;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #4aa34a;
+
+    }
+     .footer{
+      background-color: #5bbd5b ;
+      padding: 20px;
+     }
+
+</style>
+</head>
+<body>
+
+<header class="header">
+    <img src="{{ url_for('static', filename='cite.png') }}" alt="CITE Logo" class="logo-left">
+    <h1>SKILLS AND ALIGNMENT MATCHING TOOL: ACADEMIC PATHWAYS</h1>
+    <img src="{{ url_for('static', filename='univ.png') }}" alt="University Logo" class="logo-right">
+  </header>
+
+<div class="content">
+  <div class="button">Sample Input</div>
+  <p><b>CITE Skills & Interests Match — Let’s Find Your Path!</b></p>
+
+  
+  <p>Each skill area contributes to a student’s career alignment score using weighted averages:</p>
+
+  <table>
+    <tr>
+      <th>Skill Category</th>
+      <th>Weight</th>
+    </tr>
+    <tr>
+      <td>Technical Skills</td>
+      <td>40%</td>
+    </tr>
+    <tr>
+      <td>Cognitive Skills</td>
+      <td>25%</td>
+    </tr>
+    <tr>
+      <td>Soft Skills</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <td>Tool Familiarity</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+      <td>Declared Interests</td>
+      <td>5%</td>
+    </tr>
+  </table>
+
+  <div class="formula">
+    <b>Formula:</b><br>
+    Final Score = (Tech × 0.40) + (Cognitive × 0.25) + (Soft × 0.20) + (Tools × 0.10) + (Interest × 0.05)
+  </div>
+</div>
+
+</div>
+       <div class="button-group">
+        <a href="{{ url_for('sample') }}" class="button">Previous</a>
+        <a href="{{ url_for('results') }}" class="button">Next</a>
+    </div>
+    <br>
+    <div class="footer">
+        
+    </div>
+
+
+</body>
+</html>

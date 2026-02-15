@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKILLS AND ALIGNMENT MATCHING TOOL: ACADEMIC PATHWAYS</title>
+
+  <style>
+    .header {
+    background-color: rgb(29, 222, 29);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;      /* vertically align logos and text */
+    justify-content: space-between; /* equal spacing left-center-right */
+    text-align: center;
+    }
+
+    .header img {
+      height: 60px;
+    }
+
+    .header h1 {
+      flex: 1;                  /* makes the title take available space */
+      text-align: center;
+      font-size: 20px;
+      margin: 0;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 5px 0 10px 0;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: green;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    button:hover {
+    background-color: blue;
+      opacity: 0.8;
+    }
+
+    .login-form {
+      padding: 0px;
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .container {
+    background-color: rgb(29, 222, 29);
+      border: none;
+      border-radius: 20px;
+      text-align: center;
+      width: 300px;
+      padding: 20px;
+      margin-top: 80px;
+    }
+
+    .p {
+      font-size: 12px;
+      text-align: center;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    background-color: rgb(29, 222, 29);
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <img src=" {{ url_for  ( 'static', filename='cite.png' ) }}"  alt="Cite Logo">
+    <h1>SKILLS AND ALIGNMENT MATCHING TOOL: ACADEMIC PATHWAYS</h1>
+    <img src=" {{ url_for  ( 'static', filename='univ.png' ) }}"  alt="University Logo">
+  </div>
+  
+  
+  <div class="login-form">
+  <div class="container">
+  <form action="/register" method="POST">
+        <h2>Register</h2>
+        <input type="text" name="name" placeholder="Enter name" required>
+         <input type="number" name="phone_number" placeholder="Enter phone number" required>
+        <input type="email" name="email" placeholder="Enter email" required>
+        <input type="password" name="password" placeholder="Enter password" required>
+       
+        <button type="submit">Register</button>
+  </div>
+    </form>
+        <div class="p">
+        <p><a href="/">CLICK HERE TO LOGIN!!</a></p>
+      </form>
+      <div class="footer">
+        <p>&copy; 2025 SKILLS AND ALIGNMENT MATCHING TOOL: ACADEMIC PATHWAYS. All rights reserved.</p>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Flask Procedural MySQL CRUD</title>
+  <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+    <form action="/register" method="POST">
+        <h2>Register</h2>
+        <input type="text" name="name" placeholder="Enter name" required>
+        <input type="email" name="email" placeholder="Enter email" required>
+        <input type="password" name="password" placeholder="Enter password" required>
+        <button type="submit">Register</button> 
+         <p><a href="/">Log in here!</a></p>
+    </form>
+
+ 
+</body>
+</html>   -->

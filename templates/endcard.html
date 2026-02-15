@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+   body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f8fdf8;
+    color: #333;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3cb64a;
+    padding: 10px 30px;
+    color: white;
+}
+
+header img {
+    height: 60px;
+}
+
+h1 {
+    font-size: 1.2rem;
+    text-align: center;
+}
+h2{
+    text-align: center;
+
+}
+P{
+    text-align: center;
+    font-size: 2rem;
+    margin: 10px 20px;
+
+}
+
+ .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 1000px;
+            margin-top: 25px;
+}
+        .button-group a {
+            text-decoration: none;
+            background-color: #7c807c;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .button-group a:hover {
+            background-color: #4aa34a;
+        }
+        .footer {
+            background-color: #5bbd5b;
+            padding: 20px;
+            margin-block: 30px;
+        }
+</style>
+     <header>
+  <img src="{{ url_for('static', filename='cite.png') }}" alt="Cite Logo">
+  <h1>SKILLS AND ALIGNMENT MATCHING TOOL:<br>ACADEMIC PATHWAYS</h1>
+  <img src="{{ url_for('static', filename='univ.png') }}" alt="University Logo"> 
+</header>
+<br>
+  <h2>Thank you for taking the time to share your skills with us</h2>
+  <br>
+  <br>
+  <br>
+  <br>
+  <p>We hope  this experience  has helped you reflect on your skills and discover new posibilities
+    for your future pathway.
+    Remember- your success begins with you, and we're here to help whenever 
+    you feel uncertain about next step.
+    keep believving, keep exploring, and let you journey unfold with porpuse.
+  </p>
+<br>
+       <div class="button-group">
+        <a href="{{ url_for('sample1') }}" class="button">Previous</a>
+        <a href="{{ url_for('index') }}" class="button">Logout</a>
+    </div>
+    <br>
+    <div class="footer">
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CITE Academic Pathways</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background-color: #fff;
+    }
+
+    /* Header Section */
+    .header {
+    background-color: rgb(29, 222, 29);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      color: white;
+    }
+
+    .header h1 {
+      font-size: 20px;
+      text-align: center;
+      flex: 1;
+    }
+
+    .logo-left {
+      height: 80px;
+    }
+
+    .logo-right {
+      height: 80px;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin: 30px 0;
+    }
+
+    .nav-btn {
+    background-color: rgb(29, 222, 29);
+      color: #2b2b2b;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-size: 22px;
+      border: none;
+      transition: 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      background-color: #60b84e;
+      color: white;
+    }
+
+    /* Main Section */
+    .main-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .text-content {
+      max-width: 800px;
+      text-align: center;
+    }
+
+    .text-content h2 {
+      color: #060606;
+      font-size: 45px;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .text-content p {
+      font-size: 18px;
+      color: #090909;
+      line-height: 1.5;
+    }
+
+    .explore {
+      font-weight: bold;
+      margin-top: 40px;
+    }
+
+    .start-btn {
+      display: inline-block;
+    background-color: rgb(29, 222, 29);
+      color: #0f0f0f;
+      padding: 10px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      margin-top: 5px;
+      transition:  0.3s ease;
+    }
+
+    .start-btn:hover {
+      background-color: #5bb64c;
+      color: white;
+    }
+
+    .image-content img {
+      width: 350px;
+      margin-left: 60px;
+    }
+
+    /* Footer (optional) */
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: rgb(29, 222, 29);
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <img src="{{ url_for('static', filename='cite.png') }}" alt="CITE Logo" class="logo-left">
+    <h1>SKILLS AND ALIGNMENT MATCHING TOOL: ACADEMIC PATHWAYS</h1>
+    <img src="{{ url_for('static', filename='univ.png') }}" alt="University Logo" class="logo-right">
+  </header>
+
+  <nav class="navbar">
+    <a href="/home" class="nav-btn">Home</a>
+    <a href="/studentjourney" class="nav-btn">Student Journey</a>
+    <a href="#" class="nav-btn">Features</a>
+    <a href="/logout" class="nav-btn">Log Out</a>
+  </nav>
+
+  <main class="main-section">
+    <div class="text-content">
+      <h2>GUIDING CITE STUDENTS<br>TOWARDS SMARTER<br>ACADEMIC PATHWAYS</h2>
+      <p>Empowering students to navigate and excel on their personalized, smarter academic journeys.</p>
+
+      <p class="explore">Ready to explore your future?</p>
+      <a href="/studentprofile" class="start-btn">START YOUR PATHWAY</a>
+    </div>
+
+    <div class="image-content">
+      <img src="{{ url_for('static', filename='images/search-globe.png') }}" alt="Search Illustration">
+    </div>
+  </main>
+
+  <footer class="footer"></footer>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="hstyle.css">
+</head>
+<body>
+    <p><a href="/logout">Log out here</a></p>
+</body>
+</html> -->

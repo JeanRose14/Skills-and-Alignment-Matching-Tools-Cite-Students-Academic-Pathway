@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .header {
+    background-color: rgb(29, 222, 29);
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;      /* vertically align logos and text */
+    justify-content: space-between; /* equal spacing left-center-right */
+    text-align: center;
+    }
+
+    .header img {
+      height: 60px;
+    }
+
+    .header h1 {
+      flex: 1;                  /* makes the title take available space */
+      text-align: center;
+      font-size: 20px;
+      margin: 0;
+    }
+
+    input[type="email"], input[type="password"] {
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 5px 0 10px 0;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    button {
+    background-color: green;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      opacity: 0.8;
+      background-color: blue;
+    }
+
+    .login-form {
+      padding: 20px;
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .container {
+    background-color: rgb(29, 222, 29);
+      border: none;
+      border-radius: 20px;
+      text-align: center;
+      width: 300px;
+      padding: 20px;
+      margin-top: 80px;
+    }
+
+    .p {
+      font-size: 12px;
+      text-align: center;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: rgb(29, 222, 29);
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+  </style>
+  <title>Group 1</title>
+</head>
+<body>
+  <center>
+ <div class="header">
+    <img src=" {{ url_for  ( 'static', filename='cite.png' ) }}"  alt="Cite Logo">
+  
+    <h1>SKILLS AND ALIGNMENT MATCHING TOOL: ACADEMIC PATHWAYS</h1>
+    <img src= " {{ url_for  ( 'static', filename='univ.png' ) }}"  alt="University Logo">
+  
+  </div>
+  </center>
+  <div class="login-form">
+  <div class="container">
+  <center>
+  <h2>Login</h2>
+  <form method="POST" action="/login">
+    <input type="email" name="email" placeholder="Enter email" required>
+    <input type="password" name="password" placeholder="Enter password" required>
+    <button type="submit">Login</button>
+  </div>
+  </center>
+  <center>
+    <div class="p">
+    <p><a href="/registration">CLICK HERE TO REGISTER</a></p>
+  </form>
+  <div class="footer">
+    <p>&copy; 2025 SKILLS AND ALIGNMENT MATCHING TOOL: ACADEMIC PATHWAYS. All rights reserved.</p>
+</body>
+</html>

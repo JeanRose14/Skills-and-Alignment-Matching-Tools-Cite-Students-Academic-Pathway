@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Strengths - CITE</title>
+  <style>
+    header {
+      color: white;
+      font-size: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #27e506;
+      padding: 20px 40px;
+      position: relative;
+      height: 50px;
+    }
+    img { height: 80px; }
+    h1 { text-align: center; font-size: 25px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 2px solid #ccc; padding: 12px; text-align: center; }
+    th { background-color: #f2f2f2; }
+    .skill { text-align: center; width: 30%; }
+    svg { width: 40px; height: 40px; color: black; }
+    
+    a, button {
+      text-decoration: none;
+      padding: 8px 18px;
+      font-size: 18px;
+      background-color: gray;
+      color: white;
+      border-radius: 10px;
+      box-shadow: 2px 2px 5px rgb(16, 5, 5);
+      border: none;
+      cursor: pointer;
+    }
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+      margin: 20px auto;
+    }
+
+     footer {
+      background-color: #27e506;
+      padding: 21px;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="{{ url_for('static', filename='cite.png') }}" alt="Cite Logo">
+  <h1>SKILLS AND ALIGNMENT MATCHING TOOL:<br>ACADEMIC PATHWAYS</h1>
+  <img src="{{ url_for('static', filename='univ.png') }}" alt="University Logo"> 
+</header>
+
+<center>
+  <h2>Student Strengths</h2>
+  <p><strong>CITE Skills & Interests Match – Let’s Find Your Path!</strong></p>
+</center>
+
+<form method="POST">
+  <table>
+    <tr>
+      <th class="skill">Skill Area</th>
+      <th>1 (Low)</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5 (High)</th>
+    </tr>
+    <tr>
+      <td class="skill">Communication (Oral & Written)</td>
+      <td><input type="radio" name="communication" value="1" required></td>
+      <td><input type="radio" name="communication" value="2"></td>
+      <td><input type="radio" name="communication" value="3"></td>
+      <td><input type="radio" name="communication" value="4"></td>
+      <td><input type="radio" name="communication" value="5"></td>
+    </tr>
+    <tr>
+      <td class="skill">Team Collaboration</td>
+      <td><input type="radio" name="team" value="1" required></td>
+      <td><input type="radio" name="team" value="2"></td>
+      <td><input type="radio" name="team" value="3"></td>
+      <td><input type="radio" name="team" value="4"></td>
+      <td><input type="radio" name="team" value="5"></td>
+    </tr>
+    <tr>
+      <td class="skill">Time Management</td>
+      <td><input type="radio" name="time" value="1" required></td>
+      <td><input type="radio" name="time" value="2"></td>
+      <td><input type="radio" name="time" value="3"></td>
+      <td><input type="radio" name="time" value="4"></td>
+      <td><input type="radio" name="time" value="5"></td>
+    </tr>
+    <tr>
+      <td class="skill">Adaptability / Learning New Tech</td>
+      <td><input type="radio" name="adaptability" value="1" required></td>
+      <td><input type="radio" name="adaptability" value="2"></td>
+      <td><input type="radio" name="adaptability" value="3"></td>
+      <td><input type="radio" name="adaptability" value="4"></td>
+      <td><input type="radio" name="adaptability" value="5"></td>
+    </tr>
+    <tr>
+      <td class="skill">Leadership / Initiative</td>
+      <td><input type="radio" name="leadership" value="1" required></td>
+      <td><input type="radio" name="leadership" value="2"></td>
+      <td><input type="radio" name="leadership" value="3"></td>
+      <td><input type="radio" name="leadership" value="4"></td>
+      <td><input type="radio" name="leadership" value="5"></td>
+    </tr>
+    <tr>
+      <td class="skill">Professional Ethic / Responsibility</td>
+      <td><input type="radio" name="ethic" value="1" required></td>
+      <td><input type="radio" name="ethic" value="2"></td>
+      <td><input type="radio" name="ethic" value="3"></td>
+      <td><input type="radio" name="ethic" value="4"></td>
+      <td><input type="radio" name="ethic" value="5"></td>
+    </tr>
+  </table>
+
+  <div class="nav-buttons">
+    <a href="/studentprofile">Previous</a>
+    <button type="submit" formaction="/student_strengths2">Next</button>
+  </div>
+</form>
+<footer class="footer"></footer>
+</body>
+</html>

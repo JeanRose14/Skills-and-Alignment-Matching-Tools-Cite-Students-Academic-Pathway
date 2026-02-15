@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CITE Skills and Alignment Matching Tool</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f3f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      color: white;
+      font-size: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #27e506;
+      padding: 20px 40px;
+      position: relative;
+      height: 50px;
+    }
+
+    img {
+      height: 80px;
+    }
+
+    .main {
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .title {
+      background-color: #27e506;
+      color: rgb(9, 8, 8);
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .form-container {
+      background-color: #27e506;
+      width: 700px;
+      margin: 0 auto;
+      border-radius: 20px;
+      padding: 10px 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .form-header {
+      background-color: #e7eae7;
+      color: rgb(13, 12, 12);
+      padding: 8px 15px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .form-box {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 15px 20px;
+      align-items: center;
+    }
+
+    .form-box label {
+      font-weight: bold;
+      text-align: left;
+      color: #222;
+    }
+
+    .form-box input,
+    .form-box select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+
+    /* ✅ BUTTON DESIGN (Previous - left, Next - right) */
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px auto;
+      width: 1300px;
+    }
+
+    .buttons a, 
+    .buttons button {
+      text-decoration: none;
+      color: white;
+      background-color: gray;
+      padding: 10px 25px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 10px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .buttons a:hover, 
+    .buttons button:hover {
+      background-color: #4aa34a;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background-color: #27e506;
+      padding: 21px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <img src="{{ url_for('static', filename='cite.png') }}" alt="Cite Logo">
+    <h1>SKILLS AND ALIGNMENT MATCHING TOOL:<br>ACADEMIC PATHWAYS</h1>
+    <img src="{{ url_for('static', filename='univ.png') }}" alt="University Logo"> 
+  </header>
+
+  <main class="main">
+    <div class="title">Student Strengths</div>
+    <p class="subtitle">CITE Skills & Interests Match — Let’s Find Your Path!</p>
+
+    <!-- ✅ FORM CONTAINER -->
+    <div class="form-container">
+      <h3 class="form-header">STUDENT PROFILE</h3>
+
+      <!-- ✅ Form sends data to Flask -->
+      <form id="studentForm" class="form-box" method="POST" action="/studentprofile">
+        <label for="fullname">FULL NAME</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+        <label for="student_number">STUDENT NUMBER</label>
+        <input type="text" id="student_number" name="student_number" placeholder="Enter student number" required>
+
+        <label for="email">EMAIL</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="year_level">YEAR LEVEL</label>
+        <input type="text" id="year_level" name="year_level" placeholder="Enter year level" required>
+
+        <label for="program">PROGRAM</label>
+        <select id="program" name="program" required>
+          <option value="">Select your program</option>
+          <option value="IT">Information Technology</option>
+        </select>
+      </form>
+    </div>
+
+    <!-- ✅ BUTTONS OUTSIDE FORM CONTAINER (Previous Left | Next Right) -->
+    <div class="buttons">
+      <a href="/home">Previous</a>
+      <button type="/student_strengths" form="studentForm">Next</button>
+    </div>
+
+    <footer class="footer"></footer>
+  </main>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CITE Skills and Alignment Matching Tool</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f3f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      color: white;
+      font-size: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #27e506;
+      padding: 20px 40px;
+      position: relative;
+      height: 50px;
+    }
+
+    img {
+      height: 80px;
+    }
+
+    .main {
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .title {
+      background-color: #27e506;
+      color: rgb(9, 8, 8);
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .form-container {
+      background-color: #27e506;
+      width: 700px;
+      margin: 0 auto;
+      border-radius: 20px;
+      padding: 10px 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .form-header {
+      background-color: #e7eae7;
+      color: rgb(13, 12, 12);
+      padding: 8px 15px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .form-box {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 15px 20px;
+      align-items: center;
+    }
+
+    .form-box label {
+      font-weight: bold;
+      text-align: left;
+      color: #222;
+    }
+
+    .form-box input,
+    .form-box select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+
+    /* ✅ FIXED BUTTON DESIGN */
+    a {
+      display: inline-block; 
+      text-decoration: none;
+      color: white;
+      background-color: #3a3a3a;
+      margin: 11px 285px;
+      padding: 10px 25px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 10px;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    a:hover {
+      background-color: #4aa34a;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background-color: #27e506;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <img src="{{ url_for('static', filename='cite.png') }}" alt="Cite Logo">
+    <h1>SKILLS AND ALIGNMENT MATCHING TOOL:<br>ACADEMIC PATHWAYS</h1>
+    <img src="{{ url_for('static', filename='univ.png') }}" alt="University Logo"> 
+  </header>
+
+  <main class="main">
+    <div class="title">Student Strengths</div>
+    <p class="subtitle">CITE Skills & Interests Match — Let’s Find Your Path!</p>
+
+    <div class="form-container">
+      <h3 class="form-header">STUDENT PROFILE</h3>
+
+      <form class="form-box">
+        <label for="fullname">FULL NAME</label>
+        <input type="text" id="fullname" placeholder="Enter your full name" required>
+
+        <label for="student_number">STUDENT NUMBER</label>
+        <input type="text" id="student_number" placeholder="Enter student number" required>
+
+        <label for="email">EMAIL</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="year_level">YEAR LEVEL</label>
+        <input type="text" id="year_level" placeholder="Enter year level" required>
+
+        <label for="program">PROGRAM</label>
+        <select id="program">
+          <option value="">Select your program</option>
+          <option value="IT">Information Technology</option>
+        </select>
+      </form>
+    </div>
+
+    Buttons -->
+    <!-- <a href="/home">Previous</a>
+    <a href="/student_strengths">Next</a>
+
+    <footer class="footer"></footer>
+  </main>
+
+</body>
+</html> -->

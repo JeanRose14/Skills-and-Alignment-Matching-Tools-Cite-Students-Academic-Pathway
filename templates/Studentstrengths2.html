@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Strengths - CITE</title>
+  <style>
+    header {
+      color: white;
+      font-size: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #27e506;
+      padding: 20px 40px;
+      position: relative;
+      height: 50px;
+    }
+    img { height: 80px; }
+    h1 { text-align: center; font-size: 25px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 2px solid #ccc; padding: 12px; text-align: center; }
+    th { background-color: #f2f2f2; }
+    .skill { text-align: center; width: 30%; }
+    a, button {
+      text-decoration: none;
+      padding: 8px 18px;
+      font-size: 18px;
+      background-color: gray;
+      color: white;
+      border-radius: 10px;
+      box-shadow: 2px 2px 5px rgb(16, 5, 5);
+      border: none;
+      cursor: pointer;
+    }
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      width: 90%;
+      margin: 20px auto;
+    }
+
+    footer {
+      background-color: #27e506;
+      padding: 21px;
+    }
+    
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="{{ url_for('static', filename='cite.png') }}" alt="Cite Logo">
+  <h1>SKILLS AND ALIGNMENT MATCHING TOOL:<br>ACADEMIC PATHWAYS</h1>
+  <img src="{{ url_for('static', filename='univ.png') }}" alt="University Logo"> 
+</header>
+
+<center>
+  <h2>Student Strengths</h2>
+  <p><strong>CITE Skills & Interests Match – Let’s Find Your Path!</strong></p>
+</center>
+
+<form id="strengthsForm" method="POST" action="/student_strengths2">
+  <table>
+    <tr>
+      <th class="skill">Skill Area</th>
+      <th>1 (Low)</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5 (High)</th>
+    </tr>
+    <tr>
+      <td class="skill">Logical Reasoning and Critical Thinking</td>
+      <td><input type="radio" name="logical" value="1" required></td>
+      <td><input type="radio" name="logical" value="2"></td>
+      <td><input type="radio" name="logical" value="3"></td>
+      <td><input type="radio" name="logical" value="4"></td>
+      <td><input type="radio" name="logical" value="5"></td>
+    </tr>
+    <tr>
+      <td class="skill">Algorithm Design</td>
+      <td><input type="radio" name="algorithm" value="1" required></td>
+      <td><input type="radio" name="algorithm" value="2"></td>
+      <td><input type="radio" name="algorithm" value="3"></td>
+      <td><input type="radio" name="algorithm" value="4"></td>
+      <td><input type="radio" name="algorithm" value="5"></td>
+    </tr>
+    <tr>
+      <td class="skill">Debugging and Error Analysis</td>
+      <td><input type="radio" name="debugging" value="1" required></td>
+      <td><input type="radio" name="debugging" value="2"></td>
+      <td><input type="radio" name="debugging" value="3"></td>
+      <td><input type="radio" name="debugging" value="4"></td>
+      <td><input type="radio" name="debugging" value="5"></td>
+    </tr>
+    <tr>
+      <td class="skill">Research and Information Analysis</td>
+      <td><input type="radio" name="research" value="1" required></td>
+      <td><input type="radio" name="research" value="2"></td>
+      <td><input type="radio" name="research" value="3"></td>
+      <td><input type="radio" name="research" value="4"></td>
+      <td><input type="radio" name="research" value="5"></td>
+    </tr>
+    <tr>
+      <td class="skill">Technical Documentation / Report Writing</td>
+      <td><input type="radio" name="technical" value="1" required></td>
+      <td><input type="radio" name="technical" value="2"></td>
+      <td><input type="radio" name="technical" value="3"></td>
+      <td><input type="radio" name="technical" value="4"></td>
+      <td><input type="radio" name="technical" value="5"></td>
+    </tr>
+  </table>
+</form>
+
+<!-- ✅ Navigation Buttons -->
+<div class="nav-buttons">
+  <a href="/student_strengths1">Previous</a>
+  <button type="submit" form="strengthsForm">Next</button>
+</div>
+<footer class="footer"></footer>
+</body>
+</html>
